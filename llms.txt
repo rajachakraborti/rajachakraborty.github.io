@@ -1,0 +1,85 @@
+# Raja Chakraborty — Full Stack & Platform Engineer
+
+> Senior Full Stack Engineer specializing in real-time distributed systems, high-availability WebSocket pipelines, bitmap compression algorithms, and platform infrastructure at live entertainment scale. IEEE Senior Member.
+
+## Overview
+- **Name:** Raja Chakraborty
+- **Role:** Full Stack & Platform Engineer (10+ Years Experience)
+- **Standing:** IEEE Senior Member, Globee Awards Judge, CODiE Awards Judge
+- **Location:** San Francisco Bay Area, CA (Open to Remote & On-site Lead/Principal roles)
+- **LinkedIn:** https://linkedin.com/in/raja-chakraborty-203b3a115
+- **GitHub:** https://github.com/rajachakraborti
+- **Email:** rajachakraborti@gmail.com
+
+---
+
+## Core Engineering Expertise
+
+### Distributed Systems & Real-Time Delivery
+- **High-Throughput WebSocket Architectures:** Designed push-based real-time state delivery pipelines handling millions of concurrent connections during peak on-sale events (e.g., Eras Tour scale).
+- **RoaringBitmap & FlatBuffers Compression:** Encoded 100,000+ seat availability states into sparse bitmaps delivered over WebSocket in kilobytes. Built typed client SDKs with FlatBuffers and WebAssembly to offload decoding to Web Workers.
+- **Cache Coherence & CDN Invalidation:** Solved real-time vs. cached state inconsistencies (preventing ghost seat listings) by separating availability state (WebSocket push) from metadata (HTTP cached via Fastly VCL with surrogate keys).
+
+### Full Stack & Web Infrastructure
+- **React & Next.js SSR Architectures:** Implemented context-path routing for distinct sale states (onsale vs. offsale), JSON-LD structured data in SSR, and dynamic sitemap integration for top-rank organic search visibility.
+- **Service Mesh & Security:** Enforced JWT validation at the ISTIO service mesh layer before WebSocket upgrades to block automated scraping bots without touching application logic.
+- **Feature Flagging & Experimentation:** Built zero-latency local in-process evaluation using Node.js, backed by Java/gRPC and RocksDB, pushing live flag updates to browser sessions over WebSocket without page reloads.
+
+---
+
+## Engineering Case Studies (Key Accomplishments)
+
+1. **Kubernetes Cluster & Load Protection**
+   - *Problem:* Single-server bottlenecks failed under sudden fan traffic spikes.
+   - *Solution:* Migrated to EKS cluster with KEDA autoscaling, round-robin routing, aggressive pre-sale load testing, and circuit breakers to isolate upstream dependencies.
+
+2. **JWT-Gated WebSocket Auth at Service Mesh**
+   - *Problem:* Unauthenticated bots scraped live seat inventory continuously over WebSockets.
+   - *Solution:* Implemented queue-based rate limiting, followed by session-scoped JWT verification enforced directly at the ISTIO/Envoy mesh edge.
+
+3. **Unavailability-First Inventory Modeling**
+   - *Problem:* Positive availability sets required expensive O(n) re-queries on every single seat transaction.
+   - *Solution:* Flipped model to track the complement (unavailable seats), reducing update complexity to O(delta). Backed by S3 manifest snapshots.
+
+4. **Shadow Comparator System (Lambda)**
+   - *Problem:* Risk of cutting over to new inventory model without proving exact parity.
+   - *Solution:* Built AWS Lambda shadow comparator running legacy and new systems in parallel, outputting real-time parity reports on availability, pricing, and seat attributes.
+
+5. **Client-Side Observability & Telemetry**
+   - *Problem:* Relying on social media reports to discover client-side connection drops and sync issues.
+   - *Solution:* Instrumented browser SDK to stream connection lifecycle events to Kafka and Splunk for real-time alerting before user complaints.
+
+6. **Dual-Model Display Architecture (Seatmap vs. Listview)**
+   - *Problem:* Visual seatmap and text listview required conflicting data update models.
+   - *Solution:* Built availability-first bitmap pipeline for seatmap and unavailability-first complement pipeline for listview, governed by feature-flag kill switches.
+
+7. **Viewport-Aware Lazy Fetching**
+   - *Problem:* Page fired 200–300 origin requests on cold load for unviewed section imagery.
+   - *Solution:* Integrated IntersectionObserver API to fetch section previews only when scrolled into view, reducing cold load origin calls by ~80%.
+
+8. **Surrogate-Key CDN Cache Strategy**
+   - *Problem:* High TTL CDN caching prevented immediate price and event updates.
+   - *Solution:* Configured Fastly VCL with surrogate keys for targeted cache eviction, stale-while-revalidate policies, and AWS Step Functions pre-warming.
+
+9. **Zero-Latency Feature Flag Engine**
+   - *Problem:* Remote feature flag evaluations added network round-trips to the checkout path.
+   - *Solution:* Built Node.js edge engine for in-process local evaluation (Optimizely/Kameleoon), pushing live updates to client browsers over WebSockets.
+
+---
+
+## Technical Skill Matrix
+
+- **Languages:** Java, JavaScript/TypeScript, Python, C++, SQL, VCL
+- **Backend & Real-Time:** Spring Boot, Node.js, gRPC, WebSocket, Apache Kafka, Kafka Streams
+- **Data Structures & Storage:** RoaringBitmap, FlatBuffers, RocksDB, DynamoDB, Redis, S3, PostgreSQL
+- **Frontend & Web:** React, Next.js (SSR/SSG), Web Workers, WebAssembly (Wasm), IntersectionObserver, JSON-LD
+- **Cloud & DevOps:** AWS (EKS, ECS, S3, Step Functions, Lambda), Kubernetes, Helm, ISTIO, Fastly VCL, KEDA, Splunk, Prometheus, Grafana
+
+---
+
+## Honors & Professional Recognition
+- **IEEE Senior Member** (Top ~10% of global IEEE membership)
+- **Globee Awards Judge** (Enterprise Software & Platform Engineering)
+- **CODiE Awards Judge** (SIIA Software Industry Peer Review)
+- **Conference Peer Reviewer** (DeSE 2025, ICENTE)
+- **Engineering Excellence Recognition** (June 2023, Ticketmaster Platform)
