@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raja Chakraborty — Full Stack Engineer · Platform Specialist</title>
+  <meta name="description" content="Raja Chakraborty is a full stack engineer with deep platform and distributed systems expertise — real-time seat availability, WebSocket infrastructure, CDN strategy, and React/Next.js at scale. IEEE Senior Member. Open to Lead and Principal roles." />
+  <meta property="og:title" content="Raja Chakraborty — Full Stack Engineer · Platform Specialist" />
+  <meta property="og:description" content="Full stack engineer who goes deep on platform — real-time WebSocket pipelines, bitmap-compressed seat delivery, Fastly VCL cache strategy, and React/Next.js SSR at live entertainment scale. IEEE Senior Member." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" type="text/markdown" href="llms.txt" title="AI Agent Data Standard" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Structured Data for AI Agents & Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://rajachakraborty.dev/#person",
+        "name": "Raja Chakraborty",
+        "jobTitle": "Senior Full Stack & Platform Engineer",
+        "description": "Senior Full Stack Engineer specializing in real-time distributed systems, high-availability WebSocket pipelines, bitmap compression, and platform infrastructure at scale.",
+        "sameAs": [
+          "https://linkedin.com/in/raja-chakraborty-203b3a115",
+          "https://github.com/rajachakraborti"
+        ],
+        "email": "mailto:rajachakraborti@gmail.com",
+        "knowsAbout": [
+          "Distributed Systems",
+          "Real-Time WebSockets",
+          "RoaringBitmap",
+          "Kafka Streams",
+          "Java",
+          "React",
+          "Next.js",
+          "Kubernetes",
+          "Fastly VCL",
+          "FlatBuffers",
+          "WebAssembly"
+        ],
+        "honorificSuffix": "IEEE Senior Member",
+        "award": [
+          "IEEE Senior Member",
+          "Globee Awards Judge 2025",
+          "CODiE Awards Judge 2025"
+        ]
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://rajachakraborty.dev/#webpage",
+        "url": "https://rajachakraborty.dev/",
+        "name": "Raja Chakraborty — Full Stack Engineer · Platform Specialist",
+        "mainEntity": { "@id": "https://rajachakraborty.dev/#person" },
+        "description": "Portfolio and engineering case studies of Raja Chakraborty, Senior Full Stack & Platform Engineer."
+      }
+    ]
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:        #080c14;
+      --bg-2:      #0d1220;
+      --bg-glass:  rgba(13, 18, 32, 0.6);
+      --border:    rgba(99, 155, 255, 0.12);
+      --border-h:  rgba(99, 155, 255, 0.35);
+      --blue:      #4f9eff;
+      --blue-dim:  #2d6bbf;
+      --violet:    #9b5cff;
+      --cyan:      #00d4ff;
+      --text:      #e8edf7;
+      --text-2:    #8fa0bc;
+      --text-3:    #4d6080;
+      --mono:      'JetBrains Mono', monospace;
+      --sans:      'Inter', system-ui, sans-serif;
+      --radius:    14px;
+      --radius-sm: 8px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.7; min-height: 100vh; overflow-x: hidden; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--blue-dim); border-radius: 3px; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; opacity: 0.4; }
+    .container { max-width: 860px; margin: 0 auto; padding: 0 28px; }
+    section { position: relative; z-index: 1; }
+
+    /* Nav */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 28px; display: flex; align-items: center; justify-content: space-between; background: rgba(8,12,20,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); transition: border-color 0.3s; }
+    .nav-logo { font-family: var(--mono); font-size: 14px; font-weight: 600; color: var(--blue); letter-spacing: 0.05em; text-decoration: none; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: var(--text-2); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.03em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+
+    /* Hero */
+    #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 120px 28px 80px; position: relative; overflow: hidden; }
+    .hero-glow { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(79,158,255,0.08) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 80% 70%, rgba(155,92,255,0.06) 0%, transparent 70%); }
+    .hero-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(79,158,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(79,158,255,0.04) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 80% at 50% 40%, black 30%, transparent 100%); }
+    .hero-inner { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; width: 100%; display: flex; align-items: center; gap: 56px; }
+    .hero-eyebrow { font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--blue); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--blue); }
+    h1.hero-name { font-size: clamp(52px, 9vw, 96px); font-weight: 900; line-height: 0.95; letter-spacing: -0.03em; background: linear-gradient(135deg, #ffffff 0%, #c5d8ff 50%, var(--blue) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 24px; }
+    .hero-tagline { font-size: clamp(15px, 2.2vw, 19px); color: var(--text-2); font-weight: 400; line-height: 1.7; max-width: 600px; margin-bottom: 40px; min-height: 56px; }
+    .hero-tagline strong { color: var(--text); font-weight: 600; }
+    .hero-stats { display: flex; flex-wrap: wrap; gap: 32px; margin-bottom: 48px; }
+    .hero-stat .num { font-size: 30px; font-weight: 800; background: linear-gradient(135deg, var(--cyan), var(--blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
+    .hero-stat .label { font-size: 11px; color: var(--text-3); margin-top: 5px; letter-spacing: 0.06em; text-transform: uppercase; }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+
+    /* Hero photo */
+    .hero-inner { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; width: 100%; display: flex; align-items: center; gap: 56px; }
+    .hero-text { flex: 1; min-width: 0; }
+    .hero-photo-wrap { flex-shrink: 0; }
+    .hero-photo { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; object-position: center top; display: block;
+      border: 2px solid rgba(79,158,255,0.35);
+      box-shadow: 0 0 0 6px rgba(79,158,255,0.07), 0 0 48px rgba(79,158,255,0.18), 0 8px 32px rgba(0,0,0,0.5);
+      transition: box-shadow 0.3s;
+    }
+    .hero-photo:hover { box-shadow: 0 0 0 6px rgba(79,158,255,0.14), 0 0 64px rgba(79,158,255,0.3), 0 8px 32px rgba(0,0,0,0.5); }
+    @media (max-width: 680px) {
+      .hero-inner { flex-direction: column-reverse; gap: 28px; align-items: flex-start; }
+      .hero-photo { width: 110px; height: 110px; }
+    }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.25s; cursor: pointer; border: none; font-family: var(--sans); }
+    .btn-primary { background: linear-gradient(135deg, var(--blue), var(--violet)); color: #fff; box-shadow: 0 0 24px rgba(79,158,255,0.28); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 32px rgba(79,158,255,0.45); }
+    .btn-ghost { background: transparent; color: var(--text-2); border: 1px solid var(--border); }
+    .btn-ghost:hover { border-color: var(--border-h); color: var(--text); transform: translateY(-2px); }
+
+    /* Section headers */
+    .section-header { margin-bottom: 48px; }
+    .section-label { font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--blue); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 12px; display: block; }
+    .section-title { font-size: clamp(26px, 4.5vw, 38px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; color: var(--text); }
+    .section-sub { color: var(--text-2); font-size: 15px; margin-top: 12px; max-width: 600px; line-height: 1.7; }
+
+    /* About */
+    #about { padding: 100px 0; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .about-text p { color: var(--text-2); font-size: 15px; line-height: 1.8; margin-bottom: 16px; }
+    .about-text p strong { color: var(--text); }
+    .about-meta { display: flex; flex-direction: column; gap: 16px; }
+    .meta-card { background: var(--bg-glass); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; backdrop-filter: blur(12px); }
+    .meta-label { font-family: var(--mono); font-size: 10px; font-weight: 600; color: var(--blue); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 6px; }
+    .meta-value { font-size: 14px; color: var(--text); font-weight: 600; }
+    .meta-sub { font-size: 12px; color: var(--text-3); margin-top: 3px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 20px; }
+    .tag { font-family: var(--mono); font-size: 11px; font-weight: 500; padding: 4px 10px; border-radius: 4px; background: rgba(79,158,255,0.08); border: 1px solid rgba(79,158,255,0.2); color: var(--blue); letter-spacing: 0.04em; }
+    .tag.violet { background: rgba(155,92,255,0.08); border-color: rgba(155,92,255,0.2); color: var(--violet); }
+    .tag.cyan { background: rgba(0,212,255,0.08); border-color: rgba(0,212,255,0.2); color: var(--cyan); }
+
+    /* Case Studies */
+    #work { padding: 100px 0; }
+    .cases { display: flex; flex-direction: column; gap: 14px; }
+    .case-card { background: var(--bg-glass); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; backdrop-filter: blur(12px); transition: border-color 0.25s, box-shadow 0.25s; }
+    .case-card:hover { border-color: var(--border-h); box-shadow: 0 0 28px rgba(79,158,255,0.05); }
+    .case-card.open { border-color: rgba(79,158,255,0.28); }
+    .case-header { display: flex; align-items: flex-start; justify-content: space-between; padding: 20px 26px 16px; cursor: pointer; gap: 16px; user-select: none; }
+    .case-header-left { display: flex; align-items: flex-start; gap: 16px; flex: 1; }
+    .case-num { font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--text-3); letter-spacing: 0.1em; padding-top: 3px; flex-shrink: 0; }
+    .case-title-wrap { flex: 1; }
+    .case-title { font-size: 16px; font-weight: 700; color: var(--text); line-height: 1.3; margin-bottom: 6px; }
+    .case-summary { font-size: 13.5px; color: var(--text-2); line-height: 1.65; margin-bottom: 10px; }
+    .case-summary strong { color: var(--text); font-weight: 600; }
+    .case-badges { display: flex; flex-wrap: wrap; gap: 6px; }
+    .expand-hint { font-family: var(--mono); font-size: 10px; color: var(--text-3); letter-spacing: 0.08em; margin-top: 10px; display: flex; align-items: center; gap: 5px; }
+    .expand-hint::before { content: ''; display: block; width: 14px; height: 1px; background: var(--text-3); }
+    .case-card.open .expand-hint { display: none; }
+    .badge { font-family: var(--mono); font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 4px; letter-spacing: 0.04em; }
+    .badge-blue { background: rgba(79,158,255,0.1); color: var(--blue); border: 1px solid rgba(79,158,255,0.2); }
+    .badge-violet { background: rgba(155,92,255,0.1); color: var(--violet); border: 1px solid rgba(155,92,255,0.2); }
+    .badge-cyan { background: rgba(0,212,255,0.1); color: var(--cyan); border: 1px solid rgba(0,212,255,0.2); }
+    .badge-green { background: rgba(72,199,136,0.1); color: #48c788; border: 1px solid rgba(72,199,136,0.2); }
+    .case-chevron { width: 26px; height: 26px; flex-shrink: 0; border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-3); transition: all 0.25s; margin-top: 2px; }
+    .case-chevron svg { transition: transform 0.3s; }
+    .case-card.open .case-chevron svg { transform: rotate(180deg); }
+    .case-card.open .case-chevron { border-color: var(--blue); color: var(--blue); }
+    .case-body { max-height: 0; overflow: hidden; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1); }
+    .case-body.open { max-height: 1600px; }
+    .case-body-inner { padding: 0 26px 28px 58px; }
+    .case-divider { height: 1px; background: var(--border); margin-bottom: 22px; }
+    .case-body p { font-size: 14px; color: var(--text-2); line-height: 1.85; margin-bottom: 14px; }
+    .case-body p:last-child { margin-bottom: 0; }
+    .case-body p strong { color: var(--text); }
+    .case-body h4 { font-size: 11px; font-family: var(--mono); font-weight: 600; color: var(--blue); letter-spacing: 0.15em; text-transform: uppercase; margin: 20px 0 10px; }
+    .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px,1fr)); gap: 10px; margin: 18px 0 4px; }
+    .impact-chip { background: rgba(8,12,20,0.8); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 14px; text-align: center; }
+    .impact-num { font-size: 20px; font-weight: 800; color: var(--cyan); line-height: 1; font-family: var(--mono); }
+    .impact-desc { font-size: 11px; color: var(--text-3); margin-top: 5px; line-height: 1.4; }
+    .problem-box { background: rgba(155,92,255,0.06); border: 1px solid rgba(155,92,255,0.18); border-radius: var(--radius-sm); padding: 14px 16px; margin: 14px 0; }
+    .problem-box p { color: var(--text-2); margin-bottom: 0; font-size: 13px; }
+    .problem-box p strong { color: var(--violet); }
+
+    /* Skills */
+    #skills { padding: 100px 0; }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 16px; }
+    .skill-group { background: var(--bg-glass); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; backdrop-filter: blur(12px); }
+    .skill-group-title { font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--blue); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 14px; }
+    .skill-list { display: flex; flex-direction: column; gap: 8px; }
+    .skill-item { display: flex; align-items: center; gap: 10px; }
+    .skill-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--blue-dim); flex-shrink: 0; }
+    .skill-item span { font-size: 13px; color: var(--text-2); }
+
+    /* Recognition */
+    #recognition { padding: 100px 0; }
+    .recog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 14px; }
+    .recog-card { background: var(--bg-glass); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; backdrop-filter: blur(12px); transition: border-color 0.25s, transform 0.25s; }
+    .recog-card:hover { border-color: var(--border-h); transform: translateY(-3px); }
+    .recog-icon { font-size: 22px; margin-bottom: 10px; }
+    .recog-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
+    .recog-sub { font-size: 12px; color: var(--text-3); line-height: 1.5; }
+
+    /* Contact */
+    #contact { padding: 100px 0; }
+    .contact-inner { background: var(--bg-glass); border: 1px solid var(--border); border-radius: 20px; padding: 60px; text-align: center; backdrop-filter: blur(12px); position: relative; overflow: hidden; }
+    .contact-inner::before { content: ''; position: absolute; top: -40%; left: 50%; transform: translateX(-50%); width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(79,158,255,0.07) 0%, transparent 70%); pointer-events: none; }
+    .contact-inner h2 { font-size: clamp(26px, 4vw, 40px); font-weight: 800; margin-bottom: 14px; background: linear-gradient(135deg, #fff, var(--blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .contact-inner > p { color: var(--text-2); font-size: 16px; margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+    .contact-link { display: flex; align-items: center; gap: 9px; padding: 12px 18px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: rgba(8,12,20,0.5); color: var(--text-2); text-decoration: none; font-size: 13px; font-weight: 500; transition: all 0.25s; }
+    .contact-link:hover { border-color: var(--border-h); color: var(--text); transform: translateY(-2px); }
+
+    /* Footer */
+    footer { padding: 32px 28px; text-align: center; border-top: 1px solid var(--border); color: var(--text-3); font-size: 12px; }
+
+    /* Divider */
+    .section-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 0 28px; }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Responsive */
+    @media (max-width: 680px) {
+      .about-grid { grid-template-columns: 1fr; gap: 36px; }
+      .hero-stats { gap: 20px; }
+      .case-body-inner { padding: 0 16px 22px; }
+      .contact-inner { padding: 40px 22px; }
+      nav { padding: 14px 18px; }
+      .nav-links { gap: 16px; }
+      .nav-links li:nth-child(n+3) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="top-nav">
+  <a href="#hero" class="nav-logo">RC_</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-grid-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Full Stack Engineer &nbsp;·&nbsp; Platform-Leaning &nbsp;·&nbsp; Live Entertainment Scale &nbsp;·&nbsp; IEEE Senior Member</div>
+      <h1 class="hero-name">Raja<br>Chakraborty</h1>
+      <p class="hero-tagline">
+        I build <strong id="typing-target">real-time systems that don't flinch under extreme load</strong> —
+        from WebSocket pipelines that hold stable through the biggest on-sales in live entertainment
+        to bitmap-compressed seat delivery that eliminates the collision problem entirely.
+      </p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">2.4M</div><div class="label">Tickets · Single Presale Window</div></div>
+        <div class="hero-stat"><div class="num">21</div><div class="label">Global Markets</div></div>
+        <div class="hero-stat"><div class="num">100K+</div><div class="label">Seats · Real-Time Per Venue</div></div>
+        <div class="hero-stat"><div class="num">10+</div><div class="label">Years Experience</div></div>
+      </div>
+      <div class="hero-ctas">
+        <a href="#work" class="btn btn-primary" id="cta-work">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M13 6l6 6-6 6"/></svg>
+          See My Work
+        </a>
+        <a href="https://linkedin.com/in/raja-chakraborty-203b3a115" target="_blank" rel="noopener" class="btn btn-ghost" id="cta-linkedin">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="mailto:rajachakraborti@gmail.com" class="btn btn-ghost" id="cta-email">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+          Email Me
+        </a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img src="headshot.jpg" alt="Raja Chakraborty" class="hero-photo" />
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════════
+     ABOUT
+════════════════════════════════════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <div class="section-header">
+          <span class="section-label">About</span>
+          <h2 class="section-title">Full stack.<br>Platform at the core.</h2>
+        </div>
+        <p>
+          I'm a <strong>full stack engineer who leans hard into platform</strong> — 10+ years building
+          systems that have to be right — no cache to hide behind, no retry budget, no tolerance for stale state.
+          Since 2020 in live entertainment, I've owned a high-traffic <strong>Event Detail Page platform</strong>
+          serving millions of fans during the most volatile demand events in consumer commerce: major concert presales,
+          sports on-sales, and high-profile ticket drops.
+        </p>
+        <p>
+          My core domain is <strong>real-time seat availability</strong> — the full stack from Kafka Streams
+          ingesting millions of inventory events per second, through a compressed
+          <strong>RoaringBitmap representation</strong> pushed over WebSocket, to a typed client SDK that
+          frontend teams consume without ever thinking about serialization or transport. I'm equally comfortable
+          writing a Fastly VCL purge rule, tuning KEDA autoscaling, debugging a cache coherence race between
+          a push stream and a high-TTL CDN response, or instrumenting a Web Worker to keep the main thread free
+          during thousands of concurrent seat updates.
+        </p>
+        <p>
+          I'm an <strong>IEEE Senior Member</strong>, a judge for the Globee and CODiE Awards,
+          and an active peer reviewer for distributed systems conferences. Currently completing
+          an M.S. in Data Science at Grand Canyon University.
+        </p>
+        <div class="tags">
+          <span class="tag">Java</span>
+          <span class="tag">Kubernetes / EKS</span>
+          <span class="tag">WebSocket</span>
+          <span class="tag">Kafka Streams</span>
+          <span class="tag">Node.js</span>
+          <span class="tag violet">RoaringBitmap</span>
+          <span class="tag violet">FlatBuffers</span>
+          <span class="tag violet">WebAssembly</span>
+          <span class="tag cyan">Fastly VCL</span>
+          <span class="tag cyan">ISTIO</span>
+          <span class="tag cyan">Next.js / React</span>
+        </div>
+      </div>
+
+      <div class="about-meta">
+        <div class="meta-card">
+          <div class="meta-label">Currently</div>
+          <div class="meta-value">Senior Software Engineer — Platform</div>
+          <div class="meta-sub">Live entertainment at internet scale · March 2020 – Present</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">Previously</div>
+          <div class="meta-value">Full Stack &amp; Platform Engineer</div>
+          <div class="meta-sub">Wipro Technologies → Capital One &amp; Visa Inc. · 2015–2020</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">Early Career</div>
+          <div class="meta-value">Enterprise Java Engineer</div>
+          <div class="meta-sub">TCS (Citi Cards) · Cognizant (Walgreens, JP Morgan) · 2010–2015</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">Membership &amp; Standing</div>
+          <div class="meta-value">IEEE Senior Member</div>
+          <div class="meta-sub">Globee Awards Judge · CODiE Awards Judge · Conference Peer Reviewer</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">Open To</div>
+          <div class="meta-value">Lead / Principal Engineer Roles</div>
+          <div class="meta-sub">Full stack · Platform infrastructure · Real-time systems<br>Bay Area · Open to remote</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════════
+     WORK — CASE STUDIES
+════════════════════════════════════════════════ -->
+<section id="work">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Engineering Work</span>
+      <h2 class="section-title">The problems.<br>The story behind them.</h2>
+      <p class="section-sub">
+        These aren't isolated tech choices — they're a connected engineering journey building a real-time seat
+        availability platform from a server that kept falling over to a system that held through the Eras Tour.
+        Each card leads with the problem it solved.
+      </p>
+    </div>
+
+    <div class="cases">
+
+      <!-- ─── 01 ─── -->
+      <div class="case-card reveal" id="case-1">
+        <div class="case-header" onclick="toggleCase('case-1')" id="case-1-trigger">
+          <div class="case-header-left">
+            <span class="case-num">01</span>
+            <div class="case-title-wrap">
+              <div class="case-title">The server was falling over under fan traffic</div>
+              <div class="case-summary">During major on-sales, a single server would get overwhelmed by concurrent fan requests and go down. Reliability was a guess. We moved to a <strong>Kubernetes cluster on AWS EKS</strong> with round-robin load balancing so no single machine bore the full weight. We load-tested aggressively before each major on-sale to find the breaking point, and put <strong>circuit breakers</strong> in place so a traffic spike on the event page couldn't cascade and take down shared upstream services across the platform.</div>
+              <div class="case-badges">
+                <span class="badge badge-blue">Kubernetes / EKS</span>
+                <span class="badge badge-blue">KEDA Autoscaling</span>
+                <span class="badge badge-violet">Load Testing</span>
+                <span class="badge badge-cyan">Circuit Breaking</span>
+              </div>
+              <div class="expand-hint">Deep dive</div>
+            </div>
+          </div>
+          <div class="case-chevron"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="case-body" id="case-1-body">
+          <div class="case-body-inner">
+            <div class="case-divider"></div>
+            <div class="problem-box">
+              <p><strong>The problem:</strong> A list of event sections was rendered on page load — each item immediately triggering an API call for section imagery and metadata, regardless of whether the fan had ever scrolled there. On a large arena, this meant 200–300 simultaneous origin requests at cold load. It was hammering the origin, inflating CDN costs, and causing measurable render jank on mid-range mobile devices.</p>
+            </div>
+            <h4>The Engineering Challenge</h4>
+            <p>The naive fix — pagination or a "load more" button — would have degraded the UX by requiring the fan to take extra action. The goal was zero wasted requests with <strong>zero visible change to the user experience</strong>. The solution had to work in a server-side rendered Next.js environment where components mount asynchronously and the list could contain a dynamic number of items.</p>
+            <h4>The Approach</h4>
+            <p>I replaced the eager-fetch pattern with an <strong>IntersectionObserver-driven lazy-fetch architecture</strong>. Each list row registers an observer on mount. The API call fires only when that row enters the viewport — not before. Rows the fan never reaches never make a network request. The observer is cleaned up after the first intersection to avoid duplicate fetches.</p>
+            <p>A subtle challenge: the list is virtualized, so rows mount and unmount as the fan scrolls. I had to ensure observer registration was idempotent and that cached responses were reused correctly when a row remounted — avoiding redundant fetches for sections the fan had already scrolled past.</p>
+            <div class="impact-grid">
+              <div class="impact-chip"><div class="impact-num">~80%</div><div class="impact-desc">Reduction in origin calls at cold page load</div></div>
+              <div class="impact-chip"><div class="impact-num">0</div><div class="impact-desc">Requests for content never scrolled to</div></div>
+              <div class="impact-chip"><div class="impact-num">↑ TTI</div><div class="impact-desc">Time-to-interactive on low-end devices</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── 02 ─── -->
+      <div class="case-card reveal" id="case-2">
+        <div class="case-header" onclick="toggleCase('case-2')" id="case-2-trigger">
+          <div class="case-header-left">
+            <span class="case-num">02</span>
+            <div class="case-title-wrap">
+              <div class="case-title">Bots were getting free access to live seat inventory — and we had no auth</div>
+              <div class="case-summary">Automated bots were opening persistent connections and getting a live stream of seat availability data with no authentication. We couldn't reliably track IPs, and auth wasn't a hard requirement in the system yet. We first put a <strong>queue in front of the connection path that worked as a rate limiter</strong> — too many connections from the same origin in a short window got rejected before reaching the service. That bought time to build the real fix: <strong>JWT tokens issued at page load, validated at the ISTIO service mesh layer</strong> before the WebSocket upgrade even completes. The application never sees an unauthenticated connection. No changes needed in any individual service.</div>
+              <div class="case-badges">
+                <span class="badge badge-violet">JWT</span>
+                <span class="badge badge-cyan">ISTIO / Envoy</span>
+                <span class="badge badge-blue">Rate Limiting</span>
+                <span class="badge badge-violet">WebSocket Security</span>
+              </div>
+              <div class="expand-hint">Deep dive</div>
+            </div>
+          </div>
+          <div class="case-chevron"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="case-body" id="case-2-body">
+          <div class="case-body-inner">
+            <div class="case-divider"></div>
+            <div class="problem-box">
+              <p><strong>The problem:</strong> The legacy system used HTTP polling — clients periodically asked the server whether seat state had changed. Under a major presale (think: millions of fans simultaneously), polling produced stale data, seat collisions, and failed purchases. The round-trip latency meant a seat could be sold between when you last polled and when you tried to check out. "Eventually consistent" is not acceptable when the data has a price tag.</p>
+            </div>
+            <h4>The Engineering Challenge</h4>
+            <p>The payload problem alone was hard: a large venue has up to 100,000 seats, each with an available/unavailable bit. Sending the full state on every update is wasteful; sending diffs requires the client to maintain and reconcile state. The deserialization problem is also real — parsing binary data on the browser's main thread at high update frequency causes UI jank. And then there's the diffing question: <strong>should the server or the client compute what changed?</strong></p>
+            <h4>The Approach</h4>
+            <p>We replaced polling with a <strong>push-based architecture over WebSocket</strong>. On the backend, a <strong>Kafka Streams application</strong> consumes raw inventory events, transforms and deduplicates them, and encodes the current seat availability state as a <strong>compressed RoaringBitmap</strong> — a data structure specifically designed for sparse bit sets, capable of representing 100,000 seat states in a few kilobytes. This eliminates diffing: we just send the full current bitmap on every state change. The client reads it and lights up seats accordingly.</p>
+            <p>A gRPC StatefulSet service bridges the Kafka layer to the WebSocket delivery tier. For browser deserialization, I chose <strong>FlatBuffers</strong> as the wire format (zero-copy, no parsing overhead) and implemented the decoding in <strong>WebAssembly</strong> for near-native speed, offloaded to a <strong>Web Worker</strong> so decoding never touches the main thread even when thousands of updates arrive simultaneously. I built a <strong>typed client SDK</strong> around all of this — frontend teams subscribe to seat state as a simple observable; they never interact with the binary protocol, the WebSocket lifecycle, or the compression scheme.</p>
+            <p>Price and attribute data changes less frequently than seat state. That channel uses a <strong>version token</strong> over WebSocket — when the client detects a version mismatch, it fires a targeted HTTP refetch. Since each version is immutable and the WebSocket controls all cache invalidation, HTTP responses carry high TTLs and cache well at the CDN.</p>
+            <div class="impact-grid">
+              <div class="impact-chip"><div class="impact-num">Fewer</div><div class="impact-desc">Seat collisions at checkout</div></div>
+              <div class="impact-chip"><div class="impact-num">Higher</div><div class="impact-desc">Fan conversion through checkout</div></div>
+              <div class="impact-chip"><div class="impact-num">2.4M</div><div class="impact-desc">Tickets in a single presale window</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── 03 ─── -->
+      <div class="case-card reveal" id="case-3">
+        <div class="case-header" onclick="toggleCase('case-3')" id="case-3-trigger">
+          <div class="case-header-left">
+            <span class="case-num">03</span>
+            <div class="case-title-wrap">
+              <div class="case-title">Tracking available seats was too slow — so we flipped it and tracked what's gone</div>
+              <div class="case-summary">The system kept a running list of every seat that was currently available. Every time one sold, we had to re-derive the full available set from scratch — expensive at high load and increasingly wrong during peak demand. We flipped the model: <strong>track what's gone instead</strong>. When a seat sells, add it to the unavailable set. When a hold expires, remove it. Available seats are implicitly everything not on that list — no full re-query needed on every change. We backed the list view with an <strong>S3 manifest snapshot</strong> so the display layer recalculates from a known state, not the entire inventory. The Eras Tour on-sale ran on this model — that was the proof point.</div>
+              <div class="case-badges">
+                <span class="badge badge-blue">Java</span>
+                <span class="badge badge-blue">S3 / Object Storage</span>
+                <span class="badge badge-violet">Unavailability-First Model</span>
+                <span class="badge badge-cyan">Eras Tour scale</span>
+              </div>
+              <div class="expand-hint">Deep dive</div>
+            </div>
+          </div>
+          <div class="case-chevron"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="case-body" id="case-3-body">
+          <div class="case-body-inner">
+            <div class="case-divider"></div>
+            <div class="problem-box">
+              <p><strong>The problem:</strong> The availability service maintained a <strong>positive list</strong> — the set of seats that were currently available for display in the list view. Every time inventory changed (a seat sold, a hold expired, a new allotment released), the service had to re-derive the full available set. Under rapid-fire state changes during a high-demand on-sale, this produced expensive re-queries, race conditions, and a list view that visibly lagged real inventory.</p>
+            </div>
+            <h4>The Engineering Challenge</h4>
+            <p>The fundamental issue is a <strong>data model mismatch</strong>. Tracking availability in a positive-set model couples every read to the entire event inventory — a full re-query on every write. At high event concurrency, this becomes a bottleneck and a correctness hazard. The challenge was finding a representation that made updates cheap while keeping reads correct.</p>
+            <h4>The Approach</h4>
+            <p>I redesigned the model to be <strong>unavailability-first</strong>: the system now tracks the complement — the set of seats that are <em>no longer</em> available (sold, held, blocked). Availability is implicitly everything that isn't in the complement. This makes writes cheap: a seat sold? Add it to the unavailability delta. A hold expires? Remove it. No full re-query needed.</p>
+            <p>To support the list view rendering without a full inventory fetch, I introduced an <strong>object storage-backed manifest</strong> — a snapshot of the current display state serialized to S3. When user input changes (filter applied, price range adjusted) or system state changes (new allotment, hold expiry), the service recalculates only against the delta and the manifest, not the full inventory. This made the service significantly more maintainable: new availability rules could be added as manifest delta transformations without touching the core query path.</p>
+            <h4>The Tradeoff</h4>
+            <p>The unavailability-first model requires careful handling of <strong>set complement semantics</strong> when the universe (total seat count) changes — for example, when additional inventory is released mid-sale. I built explicit reconciliation logic for these events to prevent the complement from silently producing a stale or incorrect available set.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── 04 ─── -->
+      <div class="case-card reveal" id="case-4">
+        <div class="case-header" onclick="toggleCase('case-4')" id="case-4-trigger">
+          <div class="case-header-left">
+            <span class="case-num">04</span>
+            <div class="case-title-wrap">
+              <div class="case-title">We had no way to know if the new system matched the old one — so we built a comparator</div>
+              <div class="case-summary">Once unavailability-first was live, we needed more than "is it working?" — we needed to know how close the new system was to the legacy one, seat by seat, at any given moment. Without that, fully cutting over was a leap of faith. We built a <strong>Lambda function that ran both systems in parallel</strong> for the same event and produced a structured comparison report covering availability state, offer data, price, and seat attributes. This gave us a quantitative gap analysis — we could see exactly where and how often the systems diverged and close those gaps before committing to the new model fully.</div>
+              <div class="case-badges">
+                <span class="badge badge-violet">Shadow Comparison</span>
+                <span class="badge badge-blue">AWS Lambda</span>
+                <span class="badge badge-cyan">Availability / Price / Attributes</span>
+                <span class="badge badge-green">Legacy vs. New System</span>
+              </div>
+              <div class="expand-hint">Deep dive</div>
+            </div>
+          </div>
+          <div class="case-chevron"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="case-body" id="case-4-body">
+          <div class="case-body-inner">
+            <div class="case-divider"></div>
+            <div class="problem-box">
+              <p><strong>The problem:</strong> An event page before tickets go on sale (offsale) and after (onsale) are genuinely different products — different CTAs, different data fetches, different structured data for search engines, different CDN caching requirements. The codebase handled this with <code>if (isOnSale)</code> branching scattered across dozens of components. Both states were perpetually fragile: a fix for one broke the other.</p>
+            </div>
+            <h4>The Engineering Challenge</h4>
+            <p>The core issue is that <strong>sale state is a routing concern, not a rendering concern</strong>. When conditional logic lives inside components, you've already made the wrong architectural decision — you've coupled page shape to component state rather than to the URL contract. The challenge was extracting that decision upward without a massive component tree rewrite.</p>
+            <h4>The Approach</h4>
+            <p>I introduced <strong>context-path routing</strong> at the Next.js router layer — onsale and offsale states are given distinct URL contexts. SSR now renders the correct page shape from the start: on an offsale path, the server knows immediately which data to fetch, which structured data to emit, and which component variants to activate. The component tree remains shared (no forking), but each context receives a clean typed contract from the router rather than inferring state from scattered flags.</p>
+            <p>The CDN benefit is significant: <strong>Fastly can now cache onsale and offsale as distinct response variants</strong> with different TTLs — offsale pages can be cached aggressively (the inventory model doesn't change), while onsale pages carry short TTLs or bypass cache selectively. Previously, Ticketmaster had to use the same cache policy for both states, which forced a conservative short TTL even when most traffic was hitting offsale events where long caching was safe.</p>
+            <h4>The Tradeoff</h4>
+            <p>Adding a routing dimension means <strong>managing sale-state transitions</strong> — when an event goes onsale, the correct path changes and the fan's current URL may become stale. I implemented router-level redirect logic to handle this transition cleanly, including preserving query parameters (selected section, price filter, accessibility flags) across the redirect.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── 05 ─── -->
+      <div class="case-card reveal" id="case-5">
+        <div class="case-header" onclick="toggleCase('case-5')" id="case-5-trigger">
+          <div class="case-header-left">
+            <span class="case-num">05</span>
+            <div class="case-title-wrap">
+              <div class="case-title">We were finding out the system broke by watching Twitter</div>
+              <div class="case-summary">There was no structured way to know what a fan actually experienced on the page during an on-sale. If something went wrong — slow seat data, a disconnected WebSocket, a list view out of sync with the seatmap — the first signal was often social media. We <strong>instrumented the client</strong> to track what the fan saw: when seats arrived, how long the connection took, when it dropped, whether the list matched the seatmap. Those events flow to <strong>Kafka, fan out to Splunk for real-time alerting</strong>, and land in a database for post-event analysis. Now we know what happened on the client before anyone tweets about it.</div>
+              <div class="case-badges">
+                <span class="badge badge-blue">Client Instrumentation</span>
+                <span class="badge badge-violet">Kafka</span>
+                <span class="badge badge-cyan">Splunk Alerting</span>
+                <span class="badge badge-green">Real-Time Observability</span>
+              </div>
+              <div class="expand-hint">Deep dive</div>
+            </div>
+          </div>
+          <div class="case-chevron"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="case-body" id="case-5-body">
+          <div class="case-body-inner">
+            <div class="case-divider"></div>
+            <div class="problem-box">
+              <p><strong>The problem:</strong> Generic event searches — "[artist] [city] tickets" — were landing pages between positions 5–12, frequently on page 2, with no rich snippet eligibility. Search engines saw rendered HTML but no machine-readable event data: no start time, no ticket price range, no venue, no offer status. Google couldn't generate event boxes, rich cards, or Knowledge Panel entries without structured data.</p>
+            </div>
+            <h4>The Engineering Challenge</h4>
+            <p>The first instinct is to inject JSON-LD via a client-side script tag after hydration. This is wrong. Googlebot does fetch JavaScript, but structured data in client-injected scripts is processed less reliably than data in the initial HTML response. The constraint was: <strong>structured data must be in the SSR HTML, fully formed, before the response leaves the server</strong>.</p>
+            <p>The second challenge: structured data in Next.js SSR can drift. Server renders the page with the correct structured data, hydration runs, client-side state updates, and a React re-render silently overwrites the structured data injected during SSR. The page looks correct to the user but the data Google indexed is stale or missing.</p>
+            <h4>The Approach</h4>
+            <p>I added <strong>JSON-LD Event schema</strong> (including <code>MusicEvent</code>, <code>SportsEvent</code>, <code>Offer</code>, venue, and artist entities) directly into <code>getServerSideProps</code> and rendered into a <code>&lt;script type="application/ld+json"&gt;</code> tag in the page <code>&lt;head&gt;</code> at SSR time. The schema is built from the same data contract used to render the page — no separate fetch, no duplication.</p>
+            <p>To catch hydration drift, I built <strong>post-hydration DOM verification hooks</strong> that re-read the injected structured data after client-side hydration completes and compare it against the expected canonical values. Drift triggers an alert and a targeted correction, ensuring what Google indexes matches what the server rendered.</p>
+            <p>For discoverability, I wired a <strong>sitemap generator directly to the Next.js router</strong>. Instead of a static XML file that lagged event creation, the sitemap is generated dynamically on a schedule from the same route definitions the app uses — ensuring every live event URL is crawlable with the correct <code>lastmod</code> and <code>priority</code> signals.</p>
+            <div class="impact-grid">
+              <div class="impact-chip"><div class="impact-num">Pos 2–4</div><div class="impact-desc">Generic searches (was 5–12, page 2)</div></div>
+              <div class="impact-chip"><div class="impact-num">Rank 1</div><div class="impact-desc">Brand keyword positions, stable</div></div>
+              <div class="impact-chip"><div class="impact-num">Rich</div><div class="impact-desc">Knowledge Panel &amp; Event Box eligibility</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── 06 ─── -->
+      <div class="case-card reveal" id="case-6">
+        <div class="case-header" onclick="toggleCase('case-6')" id="case-6-trigger">
+          <div class="case-header-left">
+            <span class="case-num">06</span>
+            <div class="case-title-wrap">
+              <div class="case-title">The seatmap and the list view needed opposite models — with a kill switch if either broke</div>
+              <div class="case-summary">The seatmap (visual seat picker) and the list view (scrollable seat list) have fundamentally different display logic. The seatmap renders from a live bitmap — it needs to show what's there and light it up, availability-first. The list view renders from confirmed gone seats — it hides rows, unavailability-first. We <strong>built and shipped both models together</strong>, with each surface driven by its own logic, and put both behind a <strong>feature flag</strong>. If either surface shows unexpected behavior in production, the flag flips and that surface rolls back instantly — no deploy, no incident. This also meant we could verify them independently against the shadow comparator before committing to either.</div>
+              <div class="case-badges">
+                <span class="badge badge-violet">Availability-First Seatmap</span>
+                <span class="badge badge-blue">Unavailability-First Listview</span>
+                <span class="badge badge-cyan">Feature Flag Kill Switch</span>
+                <span class="badge badge-green">RoaringBitmap</span>
+              </div>
+              <div class="expand-hint">Deep dive</div>
+            </div>
+          </div>
+          <div class="case-chevron"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="case-body" id="case-6-body">
+          <div class="case-body-inner">
+            <div class="case-divider"></div>
+            <div class="problem-box">
+              <p><strong>The problem:</strong> The page runs two parallel data channels. A <strong>WebSocket push stream</strong> delivers seat availability state at sub-second latency — authoritative during an active sale. An <strong>HTTP API</strong> delivers richer per-seat metadata (price tier, attributes, display labels) with responses cached at Fastly with high TTLs for cost efficiency. When a seat sells, the push stream fires immediately. But the cached HTTP response for that seat's metadata hasn't expired yet. Result: the list view shows a seat the fan cannot buy.</p>
+            </div>
+            <h4>The Engineering Challenge</h4>
+            <p>This is a classic <strong>read-your-writes consistency problem</strong> across heterogeneous data sources with different latency and staleness characteristics. You can't make the HTTP cache expire faster without losing the cost savings that justify using a CDN. You can't ignore the push stream without re-introducing seat collisions. The two sources serve different concerns — availability <em>state</em> vs. availability <em>metadata</em> — and conflating them is the root cause of the bug.</p>
+            <h4>The Approach</h4>
+            <p>The fix is a <strong>strict separation of concerns enforced in the client SDK</strong>: the push stream is the <em>sole authority for seat availability state</em>; the HTTP channel is the <em>sole authority for seat metadata</em>. These are now distinct concerns that never overwrite each other.</p>
+            <p>The SDK maintains a <strong>local availability overlay</strong> — an in-memory truth table of seat states driven exclusively by the push stream. When a push event marks a seat as unavailable, the overlay is updated immediately and the list view suppresses that row. If a stale HTTP cache response subsequently arrives carrying "available" metadata for the same seat, the overlay intercepts it and prevents re-surfacing. The seat stays suppressed until the push stream explicitly clears it.</p>
+            <p>Cache invalidation signals flow through the same WebSocket channel as seat state: when the server rotates a price/metadata version, it sends a version token. The client detects the mismatch and fires a targeted HTTP refetch — bypassing the CDN cache for that specific resource. This keeps cache invalidation event-driven rather than TTL-driven, without requiring a full cache flush.</p>
+            <h4>The Insight</h4>
+            <p>The underlying principle: <strong>don't reconcile across authority boundaries at the leaf layer</strong>. Ghost seats appeared because the component layer was trying to merge two sources of truth. Moving that decision up to the SDK layer — with explicit rules about which source wins for which concern — eliminated the entire bug class without adding any latency to the critical path.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── 07 ─── -->
+      <div class="case-card reveal" id="case-7">
+        <div class="case-header" onclick="toggleCase('case-7')" id="case-7-trigger">
+          <div class="case-header-left">
+            <span class="case-num">07</span>
+            <div class="case-title-wrap">
+              <div class="case-title">The page was firing 300 requests on load for images the fan never scrolled to</div>
+              <div class="case-summary">Every section in the Quick Picks list triggered an API call the moment the page loaded — for preview imagery the fan might never see. On a large arena, that was 200–300 simultaneous origin requests at cold load, most of them wasted. We wired each list row with an <strong>IntersectionObserver</strong> — a browser API that fires a callback the moment an element enters the visible screen area. The API call only happens when the fan actually scrolls that row into view. Rows they never reach never cost a request. The fan sees no difference. The origin handles a fraction of the load.</div>
+              <div class="case-badges">
+                <span class="badge badge-blue">IntersectionObserver API</span>
+                <span class="badge badge-blue">JavaScript</span>
+                <span class="badge badge-violet">Performance</span>
+                <span class="badge badge-cyan">CDN / Origin Protection</span>
+              </div>
+              <div class="expand-hint">Deep dive</div>
+            </div>
+          </div>
+          <div class="case-chevron"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="case-body" id="case-7-body">
+          <div class="case-body-inner">
+            <div class="case-divider"></div>
+            <div class="problem-box">
+              <p><strong>The problem:</strong> WebSocket connections are long-lived. Once established, they stream real-time inventory state continuously. An unauthenticated connection receives a perpetual, free firehose of seat availability data — useful for automated scalping bots that want to know the moment inventory appears. Unlike HTTP endpoints where per-request auth is straightforward, WebSocket auth requires deliberate design: the HTTP upgrade handshake is the only natural auth checkpoint.</p>
+            </div>
+            <h4>The Engineering Challenge</h4>
+            <p>Application-layer auth in a WebSocket handler has a flaw: the connection is already established when the app gets involved. A bot can open a connection and start receiving data before any auth check fires. You need auth enforcement <strong>before the upgrade</strong>. Additionally, standard JWT validation at the app layer means every service must implement it — creating an inconsistent surface area and increasing the blast radius of any implementation bug.</p>
+            <h4>The Approach</h4>
+            <p>I moved JWT enforcement to the <strong>ISTIO service mesh layer</strong> using ISTIO's <code>RequestAuthentication</code> and <code>AuthorizationPolicy</code> resources. The browser acquires a short-lived JWT at page load via a standard auth flow. This token is included in the WebSocket upgrade request headers. ISTIO's Envoy sidecar validates the JWT <strong>before the upgrade handshake completes</strong> — a rejected token means no connection, full stop, at the infrastructure layer. The application never sees an unauthenticated socket.</p>
+            <p>JWT claims include a <strong>session binding</strong> that ties the connection to the fan's current page session. This prevents a valid token obtained by one session from being redistributed to a bot farm — each token is scoped to a single session fingerprint and expires after a short window. Token refresh is handled transparently by the client SDK.</p>
+            <p>Enforcement at the mesh layer means <strong>zero application code changes</strong> across the multiple services that back the WebSocket infrastructure — auth is a deployment concern, not a code concern. Prometheus metrics on failed upgrade attempts feed anomaly detection for unusual connection patterns.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── 08 ─── -->
+      <div class="case-card reveal" id="case-8">
+        <div class="case-header" onclick="toggleCase('case-8')" id="case-8-trigger">
+          <div class="case-header-left">
+            <span class="case-num">08</span>
+            <div class="case-title-wrap">
+              <div class="case-title">The CDN was protecting the server but serving fans the wrong data</div>
+              <div class="case-summary">We cached event page responses with long TTLs so the origin could survive a million fans hitting simultaneously. But when pricing or event details changed, fans were still seeing the cached stale version. A full cache wipe would expose the origin to the same traffic it was supposed to absorb. We solved it by <strong>tagging every cached response with surrogate keys</strong> — structured identifiers tied to event ID, pricing version, and sale state. When something changes, a targeted purge hits only those responses, never the whole cache. We also built a <strong>pre-warm pipeline using AWS Step Functions</strong> that fills the CDN with fresh data minutes before a sale opens, so the first wave of fan traffic hits warm cache rather than a cold origin under peak load.</div>
+              <div class="case-badges">
+                <span class="badge badge-cyan">Fastly VCL</span>
+                <span class="badge badge-cyan">Surrogate Key Purging</span>
+                <span class="badge badge-blue">Stale-While-Revalidate</span>
+                <span class="badge badge-violet">AWS Step Functions</span>
+              </div>
+              <div class="expand-hint">Deep dive</div>
+            </div>
+          </div>
+          <div class="case-chevron"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="case-body" id="case-8-body">
+          <div class="case-body-inner">
+            <div class="case-divider"></div>
+            <div class="problem-box">
+              <p><strong>The problem:</strong> High cache TTLs protect your origin from the first wave of an on-sale. But when pricing, event attributes, or sale state change, fans on cached responses see stale data. Purging everything is expensive and can expose the origin to thundering herd. Purging nothing means correctness failures. The challenge is surgical cache invalidation at CDN scale without operational fragility.</p>
+            </div>
+            <h4>The Engineering Challenge</h4>
+            <p>Fastly VCL (Varnish Configuration Language) runs at the network edge — a restricted, stateless language with no access to your application or database. Cache invalidation logic must be expressed purely as: key matching, response header rules, and purge API calls. You can't ask "did this response become stale?" — you have to design staleness out of the caching model upfront.</p>
+            <h4>The Approach</h4>
+            <p><strong>Surrogate key-based purging</strong> is the foundation. Every cached response is tagged at origin with structured <code>Surrogate-Key</code> headers composed of meaningful dimensions: event ID, venue, pricing version, sale state. When something changes, a targeted purge fires against exactly those keys — evicting only the affected responses, never the whole cache. This required disciplined tagging at the origin layer and a purge orchestration service that knew which keys to invalidate for each type of state change.</p>
+            <p><strong>Stale-while-revalidate</strong> (configured in VCL) ensures fans always receive a response even during purge windows — the edge serves the stale response while simultaneously revalidating in the background, preventing a latency spike during high-traffic moments when a purge triggers.</p>
+            <p>For on-sale openings — the highest-traffic moment — I built a <strong>pre-warm pipeline using AWS Step Functions</strong>. Minutes before a sale opens, the pipeline proactively fetches canonical event URLs through the CDN, populating Fastly's cache with fresh responses before the fan wave hits. The first million requests land on warm cache rather than hammering a cold origin.</p>
+            <h4>The Iteration</h4>
+            <p>Each major on-sale event revealed an edge case the VCL rules didn't cover — a cache key collision, a TTL that was too long for a specific response type, a surrogate key that didn't propagate correctly through Fastly's shielding layer. The current strategy is the result of iterative refinement across multiple high-profile events, each one teaching something about where the model breaks under real traffic distribution.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── 09 ─── -->
+      <div class="case-card reveal" id="case-9">
+        <div class="case-header" onclick="toggleCase('case-9')" id="case-9-trigger">
+          <div class="case-header-left">
+            <span class="case-num">09</span>
+            <div class="case-title-wrap">
+              <div class="case-title">Turning on a feature flag was adding a round-trip to every fan's checkout path</div>
+              <div class="case-summary">Standard A/B test and feature flag systems make a network call to a remote service to decide which variant a user gets. During an on-sale at peak load, that round-trip is visible latency on the path to checkout — and when a flag changes, active sessions have to reload the page to see it. We built a <strong>Node.js service that keeps a local copy of all flag rules</strong> and evaluates them in-process — no round-trip, no added latency. A <strong>Java backend</strong> streams all flag decisions through Kafka for analytics. When a product team flips a flag in production, the change propagates <strong>live to all connected sessions over the existing WebSocket</strong> — every fan sees the update without reloading the page.</div>
+              <div class="case-badges">
+                <span class="badge badge-blue">Node.js local evaluation</span>
+                <span class="badge badge-blue">Java / gRPC</span>
+                <span class="badge badge-violet">Kafka</span>
+                <span class="badge badge-cyan">WebSocket live delivery</span>
+                <span class="badge badge-green">Optimizely / Kameleoon</span>
+              </div>
+              <div class="expand-hint">Deep dive</div>
+            </div>
+          </div>
+          <div class="case-chevron"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="case-body" id="case-9-body">
+          <div class="case-body-inner">
+            <div class="case-divider"></div>
+            <div class="problem-box">
+              <p><strong>The problem:</strong> Standard feature flag evaluation makes a round-trip to a remote flag service on each request or page load. At Ticketmaster's scale — millions of concurrent sessions, many during time-sensitive on-sales — that round-trip adds meaningful latency to the critical purchase path. Additionally, when a flag changes, currently active sessions don't see the change until their next full page load. That's a slow, blunt instrument for a real-time platform.</p>
+            </div>
+            <h4>The Engineering Challenge</h4>
+            <p>Flag evaluation must be <strong>zero-round-trip-latency on the hot path</strong>. Flag updates must <strong>propagate in real time to active sessions without a reload</strong>. The system must support multiple flag providers (different teams had contracted with different vendors) interchangeably. And the full assignment event stream must flow to analytics for experiment evaluation — you can't measure an A/B test if you don't know who got which variant.</p>
+            <h4>The Approach</h4>
+            <p>I built a <strong>two-layer architecture</strong>. The first layer is a <strong>Node.js edge service</strong> that integrates with both Optimizely and Kameleoon (used interchangeably based on each team's contract). It maintains a local copy of all flag and experiment rulesets, synced continuously from each provider's SDK. Flag evaluation happens <strong>in-process</strong> — microsecond latency, no external round-trip. The service is stateless and horizontally scalable.</p>
+            <p>The second layer is a <strong>Java backend service</strong> that processes experiment decisions over gRPC, persists assignment state in <strong>RocksDB</strong> for fast local lookups and durability across restarts, and streams all assignment events to Kafka. From Kafka, the stream fans out to a Splunk pipeline (for real-time alerting) and a database (for offline experiment analysis).</p>
+            <p>Flag delivery to active browser sessions happens over the <strong>existing WebSocket infrastructure</strong>. When a flag or variant changes in production, the update propagates through the backend service and arrives at all connected clients over WebSocket — no reload, no polling. The client SDK receives the updated flag state and re-renders the relevant components. This turns feature flag delivery into a real-time operation with the same latency characteristics as seat state updates.</p>
+            <div class="impact-grid">
+              <div class="impact-chip"><div class="impact-num">0ms</div><div class="impact-desc">Added latency on hot evaluation path</div></div>
+              <div class="impact-chip"><div class="impact-num">Live</div><div class="impact-desc">Flag changes reach active sessions via WebSocket</div></div>
+              <div class="impact-chip"><div class="impact-num">2</div><div class="impact-desc">Flag providers, swappable behind one interface</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /cases -->
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════════
+     SKILLS
+════════════════════════════════════════════════ -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Technical Skills</span>
+      <h2 class="section-title">The full stack of a real-time platform.</h2>
+    </div>
+    <div class="skills-grid reveal">
+      <div class="skill-group">
+        <div class="skill-group-title">Backend &amp; APIs</div>
+        <div class="skill-list">
+          <div class="skill-item"><span class="skill-dot"></span><span>Java, Spring Boot</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>Node.js</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>gRPC, REST, GraphQL (Apollo)</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>WebSocket (push delivery)</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>Python</span></div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Streaming &amp; Data</div>
+        <div class="skill-list">
+          <div class="skill-item"><span class="skill-dot"></span><span>Apache Kafka &amp; Kafka Streams</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>RoaringBitmap, FlatBuffers</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>RocksDB, DynamoDB, Redis</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>PostgreSQL, Oracle</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>WebAssembly (browser decode)</span></div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Cloud &amp; Infrastructure</div>
+        <div class="skill-list">
+          <div class="skill-item"><span class="skill-dot"></span><span>AWS EKS, ECS, SQS, S3, Step Functions</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>Kubernetes, Helm, KEDA autoscaling</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>ISTIO service mesh, Envoy</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>Fastly VCL &amp; CDN strategy</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>Blue-green &amp; canary deployments</span></div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Frontend &amp; SEO</div>
+        <div class="skill-list">
+          <div class="skill-item"><span class="skill-dot"></span><span>React, Next.js (SSR &amp; SSG)</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>TypeScript, JavaScript</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>JSON-LD structured data (Schema.org)</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>Web Workers, IntersectionObserver</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>SVG seatmap rendering</span></div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Observability &amp; CI/CD</div>
+        <div class="skill-list">
+          <div class="skill-item"><span class="skill-dot"></span><span>Prometheus, Grafana, Splunk</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>Lightstep, SignalFx, CloudWatch</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>GitLab CI, Jenkins</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>Automated rollback pipelines</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>On-call, runbooks, SLO management</span></div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Security &amp; Experimentation</div>
+        <div class="skill-list">
+          <div class="skill-item"><span class="skill-dot"></span><span>JWT auth enforced at ISTIO mesh layer</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>Optimizely &amp; Kameleoon A/B testing</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>Real-time flag delivery via WebSocket</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>PCI-compliant system design (Visa, CapOne)</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span>Bot detection &amp; abuse prevention</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════════
+     RECOGNITION
+════════════════════════════════════════════════ -->
+<section id="recognition">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Recognition &amp; Standing</span>
+      <h2 class="section-title">Beyond the codebase.</h2>
+    </div>
+    <div class="recog-grid reveal">
+      <div class="recog-card">
+        <div class="recog-icon">🏛️</div>
+        <div class="recog-title">IEEE Senior Member</div>
+        <div class="recog-sub">Fewer than 10% of IEEE members reach Senior grade — recognizing significant performance, sustained contribution, and years of professional practice.</div>
+      </div>
+      <div class="recog-card">
+        <div class="recog-icon">🏆</div>
+        <div class="recog-title">Globee Awards Judge</div>
+        <div class="recog-sub">2025 · Peer evaluation of global technology excellence across enterprise software and platform engineering categories.</div>
+      </div>
+      <div class="recog-card">
+        <div class="recog-icon">⭐</div>
+        <div class="recog-title">CODiE Awards Judge</div>
+        <div class="recog-sub">2025 · SIIA's CODiE Award — the software industry's peer-recognized excellence program since 1986.</div>
+      </div>
+      <div class="recog-card">
+        <div class="recog-icon">📄</div>
+        <div class="recog-title">Conference Peer Reviewer</div>
+        <div class="recog-sub">DeSE 2025, ICENTE — peer review of distributed systems and engineering research from international submissions.</div>
+      </div>
+      <div class="recog-card">
+        <div class="recog-icon">🎫</div>
+        <div class="recog-title">Engineering Recognition</div>
+        <div class="recog-sub">June 2023 · Recognized by engineering leadership for platform improvements that measurably reduced seat collisions and improved fan experience at scale.</div>
+      </div>
+      <div class="recog-card">
+        <div class="recog-icon">💎</div>
+        <div class="recog-title">Diamond in the Rough Award</div>
+        <div class="recog-sub">Best Trainee · Cognizant · 2010 · Recognized among all incoming hires for technical aptitude and delivery performance.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════════
+     CONTACT
+════════════════════════════════════════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner reveal">
+      <h2>Let's talk about hard problems.</h2>
+      <p>Open to Lead and Principal Engineer roles in distributed systems, real-time platforms, and platform infrastructure. Bay Area based · open to remote.</p>
+      <div class="contact-links">
+        <a href="https://linkedin.com/in/raja-chakraborty-203b3a115" target="_blank" rel="noopener" class="contact-link" id="link-linkedin">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/rajachakraborti" target="_blank" rel="noopener" class="contact-link" id="link-github">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="mailto:rajachakraborti@gmail.com" class="contact-link" id="link-email">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+          rajachakraborti@gmail.com
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Raja Chakraborty &nbsp;·&nbsp; Senior Platform Engineer &nbsp;·&nbsp; Bay Area, CA</p>
+</footer>
+
+<script>
+  // Case toggle
+  function toggleCase(id) {
+    const card = document.getElementById(id);
+    const body = document.getElementById(id + '-body');
+    const isOpen = card.classList.contains('open');
+    document.querySelectorAll('.case-card').forEach(c => c.classList.remove('open'));
+    document.querySelectorAll('.case-body').forEach(b => b.classList.remove('open'));
+    if (!isOpen) { card.classList.add('open'); body.classList.add('open'); }
+  }
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 55);
+        revealObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.06 });
+  revealEls.forEach(el => revealObs.observe(el));
+
+  // Typing animation
+  (function() {
+    const phrases = [
+      "real-time systems that don't flinch under extreme load",
+      "the WebSocket pipeline that survived 2.4 million tickets in one presale",
+      "distributed systems where stale data costs real money",
+      "bitmap compression that makes seat collisions a solved problem",
+    ];
+    let pi = 0, ci = 0, deleting = false;
+    const t = document.getElementById('typing-target');
+    if (!t) return;
+    function tick() {
+      const phrase = phrases[pi];
+      if (!deleting && ci <= phrase.length) { t.textContent = phrase.slice(0, ci++); setTimeout(tick, 46); }
+      else if (!deleting) { deleting = true; setTimeout(tick, 2600); }
+      else if (deleting && ci >= 0) { t.textContent = phrase.slice(0, ci--); setTimeout(tick, 24); }
+      else { deleting = false; pi = (pi + 1) % phrases.length; setTimeout(tick, 350); }
+    }
+    setTimeout(tick, 900);
+  })();
+
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    document.getElementById('top-nav').style.borderBottomColor =
+      window.scrollY > 60 ? 'rgba(99,155,255,0.22)' : 'rgba(99,155,255,0.12)';
+  }, { passive: true });
+</script>
+</body>
+</html>
