@@ -1,4 +1,3 @@
-﻿# rajachakraborty.github.io
 # Hi there, I'm Raja Chakraborty 👋 
 
 ### Senior Systems & Backend Engineer | IEEE Senior Member
@@ -17,7 +16,7 @@ I focus on turning complex, inexplicable distributed systems into transparent, m
 
 * 🎓 **M.S. in Data Science** (In Progress) — Grand Canyon University | **B.Tech in IT** — JGEC
 * 🏆 **IEEE Senior Member** | Technical Judge — Globee Awards 2025 & Codie Awards 2025 | Peer Reviewer — EDAS / DESE2025
-* ⚡ **Core Strengths**: Distributed Architecture, Event-Driven Pipelines, Model Context Protocol (MCP) Servers, LLM Request Routing, Low-Uniform Latency SLA Defense, and TDD
+* ⚡ **Core Strengths**: Distributed Architecture, Event-Driven Pipelines, PySpark Lakehouse Pipelines, Vector DB Search, Model Context Protocol (MCP) Servers, LLM Request Routing, Low-Uniform Latency SLA Defense, and TDD
 
 ---
 
@@ -26,15 +25,27 @@ I focus on turning complex, inexplicable distributed systems into transparent, m
 | Category | Technologies |
 | :--- | :--- |
 | **Languages** | `Java` `Python` `TypeScript` `JavaScript` `SQL` `HTML5/CSS3` |
-| **Frameworks & Runtimes** | `Node.js` `Spring Boot` `FastAPI` `Express` `React` `Next.js` |
-| **Distributed Systems & Streaming** | `Apache Kafka` `Kafka Streams` `AWS Step Functions` `WebSockets` `WebAssembly (WASM)` `FlatBuffers` `Roaring Bitmaps` |
-| **Cloud & Infrastructure** | `AWS (Lambda, ECS, EKS, CloudWatch, S3, SQS, SNS)` `Docker` `Kubernetes` `Terraform` `Pulumi` |
-| **Databases & Warehouses** | `PostgreSQL` `Oracle` `Snowflake` `Redis` `DynamoDB` `RocksDB` `Cassandra` |
+| **Frameworks & Runtimes** | `Node.js` `FastAPI` `Spring Boot` `Express` `React` `Next.js` |
+| **Distributed Data & AI** | `PySpark DataFrames` `PyTorch Embeddings` `ChromaDB` `Apache Kafka` `Kafka Streams` `AWS Step Functions` `WebSockets` `WASM` |
+| **Cloud & IaC** | `GCP (Cloud Run v2, Vertex AI, Firestore, GCS)` `AWS (Lambda, ECS, EKS, CloudWatch, S3, SQS, SNS)` `Pulumi (Python)` `Docker` `Terraform` |
+| **Databases & Warehouses** | `PostgreSQL` `GCP Firestore` `Snowflake` `Redis` `Oracle` `DynamoDB` `RocksDB` `Cassandra` |
 | **Observability & Metrics** | `New Relic` `Datadog` `Prometheus` `Grafana` `OpenTelemetry` `TDD` `Slack Webhook Alerts` |
 
 ---
 
 ## 💻 Featured Open-Source & Portfolio Projects
+
+### 🚀 [RAG-Lakehouse — Distributed Data Pipeline & GCP LLM Engine](https://github.com/rajachakraborti/rag-lakehouse)
+**Enterprise RAG Platform & Serverless GCP AI Infrastructure** *(PySpark, PyTorch, ChromaDB, GCP Cloud Run v2, GCP Vertex AI / Gemini 1.5, Pulumi IaC, MCP 2.x)*
+* **Distributed Lakehouse Pipeline**: Uses PySpark DataFrames for multi-document chunking and native PyTorch 384-dim dense vector embedding generation.
+* **Multi-Tier Distributed Idempotency Cache**: Built a 4-layer SHA-256 checksum deduplication cache (RAM, GCP Firestore, Redis, SQLite) ensuring sub-millisecond duplicate rejection ($O(1)$) across container recycles.
+* **Honest RAG Zero-Hallucination Guard**: Implements strict vector match filtering and chunk deduplication (`rag_engine.py`) to eliminate pre-canned fallback hallucinations.
+* **Heuristic Model Router & Anti-Burst Protection**: Dynamically routes complex queries to **Gemini 1.5 Pro** vs low-latency queries to **Gemini 1.5 Flash** with dual-threshold sliding window rate limiting.
+* 🌐 **Live Web UI**: [rajachakraborti.github.io/rag-lakehouse](https://rajachakraborti.github.io/rag-lakehouse/)
+* ⚡ **Live API Gateway**: [rag-lakehouse-1089897614691.us-central1.run.app](https://rag-lakehouse-1089897614691.us-central1.run.app)
+* 📂 **Source Code**: [rajachakraborti/rag-lakehouse](https://github.com/rajachakraborti/rag-lakehouse)
+
+---
 
 ### 🩺 [Telehealth Hypertension Analytics](https://telehealth-hypertension-analytics-v.vercel.app/login)
 **Remote Patient Monitoring & Telemetry Platform** *(FastAPI, React, Python Data Analytics)*
@@ -43,10 +54,14 @@ I focus on turning complex, inexplicable distributed systems into transparent, m
 * 🌐 **Live Demo**: [telehealth-hypertension-analytics-v.vercel.app](https://telehealth-hypertension-analytics-v.vercel.app/login) (Credentials: `admin` / `admin123`)
 * 📂 **Source Code**: [rajachakraborti/telehealth-hypertension-analytics-vercel](https://github.com/rajachakraborti/telehealth-hypertension-analytics-vercel)
 
+---
+
 ### 🤖 Custom Model Context Protocol (MCP) Load Test Analytics Server
 **AI Developer Tooling & Telemetry Bridge** *(Python, TypeScript, MCP SDK)*
 * Built a custom MCP server to surface load testing metrics directly to engineering and business stakeholders.
-* Enabled non-technical teams to query cross-account benchmark results and verify platform improvements under peak load.
+* Enabled non-technical teams to query cross-account benchmark results and verify platform performance gains under peak load.
+
+---
 
 ### 🔀 AWS Bedrock LLM Request Router & Legacy Safeguards
 **Pragmatic AI Request Routing & Defensive Webhooks** *(Python, AWS Bedrock, Slack Webhooks)*
@@ -55,12 +70,19 @@ I focus on turning complex, inexplicable distributed systems into transparent, m
 
 ---
 
-## 📈 GitHub Statistics & Activity
+## 📈 GitHub Activity & Metrics
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=rajachakraborti&show_icons=true&theme=radial&count_private=true" alt="Raja's GitHub Stats" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rajachakraborti&layout=compact&theme=radial&hide=html,css" alt="Top Languages" width="48%" />
+  <img src="https://img.shields.io/github/followers/rajachakraborti?label=Followers&style=for-the-badge&logo=github&color=0F766E" alt="Followers" />
+  <img src="https://img.shields.io/github/stars/rajachakraborti?label=Stars&style=for-the-badge&logo=github&color=D97706" alt="Stars" />
+  <img src="https://img.shields.io/badge/Public_Repositories-13-blue?style=for-the-badge&logo=github&color=1E1B4B" alt="Repositories" />
 </p>
+
+### 🛠️ Primary Language Distribution
+- **Java**: `Spring Boot` `Microservices` `High-Concurrency Engine Design` `Memory Optimization`
+- **Python**: `PySpark` `PyTorch` `FastAPI` `Data Analytics` `Vertex AI / Bedrock`
+- **TypeScript / JavaScript**: `Node.js` `React` `Next.js` `WebAssembly (WASM) SDKs`
+- **SQL**: `PostgreSQL Schema Design` `Query Optimization` `Data Warehouse Modeling`
 
 ---
 
